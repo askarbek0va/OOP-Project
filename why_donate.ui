@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(185, 28, 28);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>381</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    border-radius: 10px;
+    padding: 8px 2px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+	color: rgb(0,0,128);
+	background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollContent">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>365</width>
+       <height>325</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <layout class="QVBoxLayout" name="scrollLayout">
+      <item>
+       <widget class="QTextEdit" name="textEdit_2">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:16px; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;Why Donate Blood?&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;&lt;br /&gt;Donating blood is one of the simplest and most impactful ways to help others — and it only takes about an hour of your time. Here’s why it matters:&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;1. You Save Lives&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;• One donation can help save up to 3 lives.&lt;br /&gt;• Your blood may go to patients undergoing surgery, cancer treatment, organ transplants, or those suffering from trauma or chronic illnesses.&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;&lt;br /&gt;2. There’s Always a Need&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;• Every 2 seconds, someone in the U.S. needs blood.&lt;br /&gt;• Blood can’t be manufactured — it must come from donors.&lt;br /&gt;• Hospitals rely on a steady supply for emergencies and everyday treatments.&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;&lt;br /&gt;3. It’s Good for Your Community&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;• Your donation may help someone in your town, neighborhood, or even someone you know.&lt;br /&gt;• During disasters or shortages, local donors make the biggest difference.&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;&lt;br /&gt;4. You Get a Free Health Check&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;• Before donating, you’ll get your blood pressure, hemoglobin, pulse, and temperature checked.&lt;br /&gt;• Sometimes, your donation is tested for rare conditions, offering extra peace of mind.&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;&lt;br /&gt;5. It Feels Good to Do Good&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;• Donating is an act of kindness — and a powerful way to give back.&lt;br /&gt;• Many donors say they feel proud, energized, and more connected to their community afterward.&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;br /&gt;If you’re healthy and eligible, you’re already someone who &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; font-style:italic;&quot;&gt;can&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt; make a real difference — with just your blood.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;&amp;quot;Be a Hero—Start with a Drop&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="emergencyTitle">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>343</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Fluent Icons</family>
+      <pointsize>25</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Why important?</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="okButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>430</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Общий стиль для всего окна */
+QWidget {
+    background-color: #b30000; /* насыщенный красный */
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+/* Заголовки */
+QLabel#titleLabel {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Подзаголовки и текст */
+QLabel {
+    font-size: 14px;
+    color: white;
+}
+
+/* Поля ввода */
+QLineEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Фокус на поле */
+QLineEdit:focus {
+    border: 2px solid #ff1a1a;
+}
+
+/* Кнопки */
+QPushButton {
+    background-color: #b30000;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 8px 16px;
+    border: 2px solid white;
+}
+
+QPushButton:hover {
+    background-color: #ffcccc;
+    color: #800000;
+}
+
+QPushButton:pressed {
+    background-color: #ffe6e6;
+    border: 2px solid #ff9999;
+}
+
+/* Ошибки или уведомления */
+QLabel#errorLabel {
+    color: #ffcccc;
+    font-size: 12px;
+}
+
+/* Кнопки внизу: Sign In / Sign Up переключение */
+QPushButton#switchButton {
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    text-decoration: underline;
+    border: none;
+}
+
+QPushButton#switchButton:hover {
+    color: #ff9999;
+}</string>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

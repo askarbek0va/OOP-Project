@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>420</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>420</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Blood Request</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #b91c1c; color: white; font-weight: bold;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QScrollArea" name="scrollArea_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>381</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    border-radius: 10px;
+    padding: 8px 2px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+	color: rgb(0,0,128);
+	background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollContent_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>365</width>
+       <height>385</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <layout class="QVBoxLayout" name="scrollLayout">
+      <item>
+       <widget class="QFrame" name="bloodCard">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <layout class="QVBoxLayout" name="cardLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap>../../../Downloads/blood-pressure.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="bloodTitle">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0,0,128);</string>
+           </property>
+           <property name="text">
+            <string>HOSPITAL:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="hospitalNameInput">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>LOCATION:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="cityInput">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>REQUESTED BLOOD TYPE:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="requestedBloodCombo">
+           <property name="cursor">
+            <cursorShape>ArrowCursor</cursorShape>
+           </property>
+           <item>
+            <property name="text">
+             <string>A+</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A-</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>B+</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>B-</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AB+</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AB-</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0-</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0+</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="submitButton">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>490</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Общий стиль для всего окна */
+QWidget {
+    background-color: #b30000; /* насыщенный красный */
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+/* Заголовки */
+QLabel#titleLabel {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Подзаголовки и текст */
+QLabel {
+    font-size: 14px;
+    color: white;
+}
+
+/* Поля ввода */
+QLineEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Фокус на поле */
+QLineEdit:focus {
+    border: 2px solid #ff1a1a;
+}
+
+/* Кнопки */
+QPushButton {
+    background-color: #b30000;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 8px 16px;
+    border: 2px solid white;
+}
+
+QPushButton:hover {
+    background-color: #ffcccc;
+    color: #800000;
+}
+
+QPushButton:pressed {
+    background-color: #ffe6e6;
+    border: 2px solid #ff9999;
+}
+
+/* Ошибки или уведомления */
+QLabel#errorLabel {
+    color: #ffcccc;
+    font-size: 12px;
+}
+
+/* Кнопки внизу: Sign In / Sign Up переключение */
+QPushButton#switchButton {
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    text-decoration: underline;
+    border: none;
+}
+
+QPushButton#switchButton:hover {
+    color: #ff9999;
+}</string>
+    </property>
+    <property name="text">
+     <string>Submit</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="emergencyTitle">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>362</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 700 18pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Blood request</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>420</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

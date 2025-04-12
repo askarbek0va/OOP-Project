@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(185, 28, 28);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>361</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    border-radius: 10px;
+    padding: 8px 2px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+	color: rgb(0,0,128);
+	background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollContent">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>345</width>
+       <height>325</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <layout class="QVBoxLayout" name="scrollLayout">
+      <item>
+       <widget class="QTextEdit" name="textEdit_2">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:16px; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;Who Can Donate Blood?&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;&lt;br /&gt;You may be eligible to donate blood if you meet a few basic health and lifestyle requirements. Here’s what you need to know:&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;&lt;br /&gt;General Requirements&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;• Age: At least 18 years old (some states allow 16 or 17 with parental consent)&lt;br /&gt;• Weight: At least 110 lbs (about 50 kg)&lt;br /&gt;• Health: You must feel healthy and well on the day of donation&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;Donation Frequency&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;• Whole Blood: Every 56 days&lt;br /&gt;• Platelets: Every 15 days, up to 24 times per year&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;You CAN donate if you:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;• Have allergies, as long as you feel well, have no fever, and can breathe normally&lt;br /&gt;• Have high or low blood pressure, if it’s controlled and within an acceptable range&lt;br /&gt;• Are managing diabetes with insulin or oral medications&lt;br /&gt;• Have a heart condition but no symptoms in the last 6 months and have been medically cleared&lt;br /&gt;• Take most common medications, including antidepressants, birth control, cholesterol meds, and aspirin (aspirin is OK for whole blood, but avoid for 2 days before platelet donation)&lt;br /&gt;• Had cancer, if it was not a blood cancer and treatment ended more than 12 months ago with no recurrence&lt;br /&gt;• Are living with chronic illnesses, if they are well-managed and you feel good&lt;br /&gt;• Have had acupuncture, dental work, or minor surgery, if there’s no infection&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px; color:#b91c1c;&quot;&gt;You CANNOT donate if you:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16px;&quot;&gt;&lt;br /&gt;• Have cold or flu symptoms, including fever, productive cough, or infection&lt;br /&gt;• Are currently on antibiotics for an active infection (sinus, throat, lungs, etc.)&lt;br /&gt;• Are pregnant or gave birth in the last 6 weeks&lt;br /&gt;• Have ever tested positive for:&lt;br /&gt;• HIV/AIDS&lt;br /&gt;• Hepatitis B or C&lt;br /&gt;• Have had leukemia, lymphoma, or other blood cancers&lt;br /&gt;• Take blood thinners (e.g. warfarin, heparin, Eliquis, Xarelto, Pradaxa, etc.)&lt;br /&gt;• Had a blood transfusion or organ transplant in the last 3 months&lt;br /&gt;• Lived in or traveled to malaria-risk areas recently:&lt;br /&gt;• Wait 3 months after travel&lt;br /&gt;• Wait 3 years after treatment for malaria&lt;br /&gt;• Are being treated for active tuberculosis&lt;br /&gt;• Have a bleeding disorder or your blood does not clot normally&lt;br /&gt;• Are recovering from major surgery without full clearance&lt;br /&gt;&lt;br /&gt;⸻&lt;br /&gt;&lt;br /&gt;Not Sure?&lt;br /&gt;&lt;br /&gt;If you’re uncertain about your health, medications, or travel history, it’s totally okay — just:&lt;br /&gt;• Call your local donation center, or&lt;br /&gt;• Speak with the medical screener on donation day&lt;br /&gt;&lt;br /&gt;They’ll help you determine if it’s safe for you and the recipient.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="emergencyTitle">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>343</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Fluent Icons</family>
+      <pointsize>25</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Who can donate?</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="okButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>430</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Общий стиль для всего окна */
+QWidget {
+    background-color: #b30000; /* насыщенный красный */
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+/* Заголовки */
+QLabel#titleLabel {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Подзаголовки и текст */
+QLabel {
+    font-size: 14px;
+    color: white;
+}
+
+/* Поля ввода */
+QLineEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Фокус на поле */
+QLineEdit:focus {
+    border: 2px solid #ff1a1a;
+}
+
+/* Кнопки */
+QPushButton {
+    background-color: #b30000;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 8px 16px;
+    border: 2px solid white;
+}
+
+QPushButton:hover {
+    background-color: #ffcccc;
+    color: #800000;
+}
+
+QPushButton:pressed {
+    background-color: #ffe6e6;
+    border: 2px solid #ff9999;
+}
+
+/* Ошибки или уведомления */
+QLabel#errorLabel {
+    color: #ffcccc;
+    font-size: 12px;
+}
+
+/* Кнопки внизу: Sign In / Sign Up переключение */
+QPushButton#switchButton {
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    text-decoration: underline;
+    border: none;
+}
+
+QPushButton#switchButton:hover {
+    color: #ff9999;
+}</string>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
