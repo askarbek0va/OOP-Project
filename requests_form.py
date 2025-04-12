@@ -1,4 +1,5 @@
-from PyQt6 import QtWidgets, uic
+from PyQt6 import QtWidgets, uic,QtCore
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMessageBox, QTableWidgetItem, QPushButton,QMainWindow
 import sqlite3
 from datetime import datetime
@@ -37,10 +38,12 @@ class RequestForm(QMainWindow):
             conn = sqlite3.connect("blood_donation_db")
             cursor = conn.cursor()
 
+            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
             cursor.execute("""
-                INSERT INTO Requests (Hospital, City, "Blood type", status)
-                VALUES (?, ?, ?, 'pending')
-            """, (hospital, city, blood_type))
+                INSERT INTO Requests (Hospital, City, "Blood type", status,timestamp)
+                VALUES (?, ?, ?, 'pending',?)
+            """, (hospital, city, blood_type,now))
             conn.commit()
 
             cursor.execute("""
@@ -109,6 +112,11 @@ class RequestForm(QMainWindow):
                     table.setItem(row, 3, QTableWidgetItem(donor[4]))  # Last donation
                     table.setItem(row, 4, QTableWidgetItem(donor[5]))  # Location
                     table.setItem(row, 5, QTableWidgetItem(donor[6]))  # Contacts
+
+                    for col, value in enumerate([donor[1], str(donor[2]), donor[3], donor[4], donor[5], donor[6]]):
+                        item = QTableWidgetItem(value)
+                        item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsEditable)
+                        table.setItem(row, col, item)
 
 
                     request_btn = QPushButton("Request")
