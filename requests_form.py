@@ -4,12 +4,12 @@ from PyQt6.QtWidgets import QMessageBox, QTableWidgetItem, QPushButton,QMainWind
 import sqlite3
 from datetime import datetime
 from PyQt6.QtGui import QMovie
+from form_window import FormWindow
 
 
-class RequestForm(QMainWindow):
+class RequestForm(FormWindow):
     def __init__(self):
-        super().__init__()
-        uic.loadUi("request_blood.ui", self)
+        super().__init__("request_blood.ui", "patient.gif")
 
         self.label = self.findChild(QtWidgets.QLabel, "label")
         self.label.setScaledContents(True)
@@ -31,7 +31,7 @@ class RequestForm(QMainWindow):
         blood_type = self.bloodtype_input.currentText()
 
         if not hospital or not city:
-            QMessageBox.warning(self, "Error", "Please fill all fields.")
+            self.show_warning("Error", "Please fill all fields.")
             return
 
         try:
@@ -53,7 +53,7 @@ class RequestForm(QMainWindow):
             all_donors = cursor.fetchall()
 
             if not all_donors:
-                QMessageBox.warning(self, "No Donor Found", "No donor with this blood type available.")
+                self.show_warning( "No Donor Found", "No donor with this blood type available.")
                 conn.close()
                 return
 
@@ -160,7 +160,7 @@ class RequestForm(QMainWindow):
             self.bloodtype_input.setCurrentIndex(0)
 
         except Exception as e:
-            QMessageBox.critical(self, "Database Error", str(e))
+            self.show_critical( "Database Error", str(e))
 
     def confirm_request(self, donor_id, hospital, blood_type, table):
         reply = QMessageBox.question(self, "Confirm", "Are you sure you want to select this donor?",
@@ -186,6 +186,7 @@ class RequestForm(QMainWindow):
                 conn.commit()
 
                 cursor.execute("DELETE FROM Donors WHERE ID = ?", (donor_id,))
+
                 cursor.execute("""
                     UPDATE [Blood Inventory]
                     SET Quantity = Quantity - 1
@@ -195,11 +196,11 @@ class RequestForm(QMainWindow):
                 conn.commit()
                 conn.close()
 
-                QMessageBox.information(self, "Done", "Donor has been successfully requested.")
+                self.show_information( "Done", "Donor has been successfully requested.")
 
                 self.matching_window.close()
                 self.close()
 
             except Exception as e:
-                QMessageBox.critical(self, "Error", str(e))
+                self.show_critical( "Error", str(e))
 

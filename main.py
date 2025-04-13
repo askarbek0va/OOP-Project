@@ -1,5 +1,5 @@
-from main_page import MainWindow,SubWindow
-from PyQt6 import QtWidgets, uic
+from main_page import MainWindow
+from PyQt6 import QtWidgets
 import sys
 
 

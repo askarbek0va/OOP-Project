@@ -73,7 +73,7 @@ class MainWindow(QtWidgets.QWidget):
     def load_blood_inventory(self):
         conn = sqlite3.connect("blood_donation_db")
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM "Blood Inventory"')
+        cursor.execute('SELECT * FROM "Blood Inventory" ORDER BY "Blood type"')
         rows = cursor.fetchall()
         conn.close()
 
