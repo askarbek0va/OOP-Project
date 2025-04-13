@@ -4,9 +4,9 @@
 The Blood Donation Management System is an application that helps manage donor registrations, blood inventory, and hospital requests efficiently. It ensures that blood donation centers can track available blood types, donor eligibility, and hospital requests in a structured manner. Users can register themselves writing their blood type and find suitable donors.
 
 ## Team Members
-- Kanybekova Aiturgan(Leader) - Oversees the project, ensures smooth progress, assigns tasks, and verifies final implementation.
+- Kanybekova Aiturgan(Leader and Presenter) - Oversees the project, ensures smooth progress, assigns tasks, and verifies final implementation.
 - Askarbekova Meerim(Backend Developer) - Writes and manages the core logic, handles database operations, and ensures system functionality.
-- Sarlykova Aiza(Designer and Presenter) -  Designs the interface using PyQt Designer and prepares the project presentation.
+- Sarlykova Aiza(Designer) -  Designs the interface using PyQt Designer.
   
 ## Meetings and discussions documentation
 https://docs.google.com/document/d/19o1r7gERA5ci_CQZ8dP_Uzb97aLcx-AnDkkrhUewomw/edit?tab=t.0
@@ -48,6 +48,15 @@ https://docs.google.com/document/d/19o1r7gERA5ci_CQZ8dP_Uzb97aLcx-AnDkkrhUewomw/
 
 #### Request Blood Form 
 <img width="422" alt="Снимок экрана 2025-04-12 в 15 42 55" src="https://github.com/user-attachments/assets/f39606fb-105d-47a8-a149-ebb67eac28bf" />
+
+#### Errors 
+<img width="420" alt="all_fields-must_be_filled" src="https://github.com/user-attachments/assets/0f929171-3b9d-4d18-9bff-57e482225907" />
+<img width="421" alt="checkbox" src="https://github.com/user-attachments/assets/452c84a2-72e7-47bd-8af2-2da4357e2cfc" />
+
+## Presentation
+
+https://www.canva.com/design/DAGkH6EyEIs/drA0KINHbpGze1qG5RVKSQ/edit?utm_content=DAGkH6EyEIs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 
 
 
