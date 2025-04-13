@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>420</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>420</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>Blood Donation Registration</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #b91c1c; color: white; font-weight: bold;</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>40</width>
+    <height>40</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="submitBtn">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>490</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Общий стиль для всего окна */
+QWidget {
+    background-color: #b30000; /* насыщенный красный */
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+/* Заголовки */
+QLabel#titleLabel {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Подзаголовки и текст */
+QLabel {
+    font-size: 14px;
+    color: white;
+}
+
+/* Поля ввода */
+QLineEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Фокус на поле */
+QLineEdit:focus {
+    border: 2px solid #ff1a1a;
+}
+
+/* Кнопки */
+QPushButton {
+    background-color: #b30000;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 8px 16px;
+    border: 2px solid white;
+}
+
+QPushButton:hover {
+    background-color: #ffcccc;
+    color: #800000;
+}
+
+QPushButton:pressed {
+    background-color: #ffe6e6;
+    border: 2px solid #ff9999;
+}
+
+/* Ошибки или уведомления */
+QLabel#errorLabel {
+    color: #ffcccc;
+    font-size: 12px;
+}
+
+/* Кнопки внизу: Sign In / Sign Up переключение */
+QPushButton#switchButton {
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    text-decoration: underline;
+    border: none;
+}
+
+QPushButton#switchButton:hover {
+    color: #ff9999;
+}</string>
+    </property>
+    <property name="text">
+     <string>Submit</string>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>382</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    border-radius: 10px;
+    padding: 8px 2px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+	color: rgb(0,0,128);
+	background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollContent_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>362</width>
+       <height>625</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <layout class="QVBoxLayout" name="scrollLayout">
+      <item>
+       <widget class="QFrame" name="bloodCard">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <layout class="QVBoxLayout" name="cardLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="bloodTitle">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0,0,128);</string>
+           </property>
+           <property name="text">
+            <string>NAME:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="nameLineEdit">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>BIRTH DATE:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="birthDateEdit">
+           <property name="styleSheet">
+            <string notr="true">QDateEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="maximumDate">
+            <date>
+             <year>2200</year>
+             <month>12</month>
+             <day>31</day>
+            </date>
+           </property>
+           <property name="minimumDate">
+            <date>
+             <year>1950</year>
+             <month>1</month>
+             <day>1</day>
+            </date>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>LOCATION:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="locationLineEdit">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>BLOOD TYPE:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="bloodTypeComboBox">
+           <item>
+            <property name="text">
+             <string>A+</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A-</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>B+</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>B-</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AB+</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AB-</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0-</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0+</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>LAST DONATION DATE:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="lastDonationDateEdit">
+           <property name="styleSheet">
+            <string notr="true">QDateEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+           <property name="date">
+            <date>
+             <year>2020</year>
+             <month>1</month>
+             <day>1</day>
+            </date>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>CONTACTS:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="ContactsLineEdit">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    font-size: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox">
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>8</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 8pt &quot;Segoe UI&quot;;</string>
+           </property>
+           <property name="text">
+            <string>By using this service, you agree  to our Privacy Policy and consent  
+to the collection and use of your information as described.</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <property name="autoRepeat">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>false</bool>
+           </property>
+           <property name="tristate">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="emergencyTitle">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>362</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 700 16pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Blood donation registration </string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>420</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
