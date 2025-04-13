@@ -157,9 +157,9 @@ QPushButton#switchButton:hover {
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>-275</y>
        <width>362</width>
-       <height>625</height>
+       <height>669</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -348,6 +348,30 @@ QPushButton#switchButton:hover {
           <widget class="QLabel" name="label_5">
            <property name="text">
             <string>LAST DONATION DATE:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>9</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Please do not set a last donation date if you have not donated blood before</string>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
