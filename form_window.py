@@ -8,7 +8,7 @@ class FormWindow(QMainWindow):
         super().__init__()
         uic.loadUi(ui_file, self)
 
-        # Общие элементы
+
         self.label = self.findChild(QtWidgets.QLabel, "label")
         self.label.setScaledContents(True)
 
