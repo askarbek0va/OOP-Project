@@ -17,7 +17,6 @@ class DonateForm(FormWindow):
         self.label.setMovie(self.movie)
         self.movie.start()
 
-
         self.name_input = self.findChild(QtWidgets.QLineEdit, "nameLineEdit")
         self.birthdate_input = self.findChild(QtWidgets.QDateEdit, "birthDateEdit")
         self.bloodtype_input = self.findChild(QtWidgets.QComboBox, "bloodTypeComboBox")
@@ -57,20 +56,18 @@ class DonateForm(FormWindow):
 
         if not name or not location or not contacts:
             self.show_warning("Error", "Please fill all fields.")
-            return
 
         try:
             age = int(age)
             if age < 18 or age > 60:
                 self.show_warning("Error", "Age should be from 18 to 60")
-                return
         except ValueError:
             self.show_warning( "Error", "Age should be a number")
-            return
+
 
         if not self.checkbox.isChecked():
             self.show_warning( "Error", "Please confirm the checkbox before submitting.")
-            return
+
 
 
         name_parts = standardized_name.split()

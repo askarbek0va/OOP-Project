@@ -210,7 +210,7 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QPushButton" name="submitButton">
+   <widget class="QPushButton" name="submitBtn">
     <property name="geometry">
      <rect>
       <x>110</x>

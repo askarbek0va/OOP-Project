@@ -18,7 +18,7 @@ class RequestForm(FormWindow):
         self.label.setMovie(self.movie)
         self.movie.start()
 
-        self.submit_button = self.findChild(QtWidgets.QPushButton, "submitButton")
+        self.submit_button = self.findChild(QtWidgets.QPushButton, "submitBtn")
         self.hospital_input = self.findChild(QtWidgets.QLineEdit, "hospitalNameInput")
         self.city_input = self.findChild(QtWidgets.QLineEdit, "cityInput")
         self.bloodtype_input = self.findChild(QtWidgets.QComboBox, "requestedBloodCombo")

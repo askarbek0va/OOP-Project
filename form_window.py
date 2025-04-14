@@ -16,9 +16,6 @@ class FormWindow(QMainWindow):
         self.label.setMovie(self.movie)
         self.movie.start()
 
-        self.submit_button = self.findChild(QtWidgets.QPushButton, "submitBtn")
-        self.submit_button.clicked.connect(self.handle_submit)
-
     def handle_submit(self):
         raise NotImplementedError("This method should be overridden in child classes")
 
