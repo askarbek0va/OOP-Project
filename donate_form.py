@@ -3,12 +3,18 @@ from PyQt6.QtWidgets import QMessageBox, QMainWindow,QPushButton
 import sqlite3
 from datetime import datetime,date
 from PyQt6.QtGui import QMovie
+
+from blood_inventory import BloodInventoryDAO
 from form_window import FormWindow
+from donors_dao import DonorsDAO
 
 
 class DonateForm(FormWindow):
     def __init__(self):
         super().__init__("donateform.ui", "blood-donation.gif")
+
+        self.dao_donors=DonorsDAO()
+        self.dao_inventory=BloodInventoryDAO()
 
         self.label = self.findChild(QtWidgets.QLabel, "label")
         self.label.setScaledContents(True)
@@ -83,39 +89,15 @@ class DonateForm(FormWindow):
         name_variant_2 = f"{last_name} {first_name}"
 
         try:
-            conn = sqlite3.connect("blood_donation_db")
-            cursor = conn.cursor()
 
-            cursor.execute('''
-                            SELECT * FROM Donors WHERE (LOWER(Name) = ? OR LOWER(Name) = ?) AND Contacts = ? AND "Blood type" = ?
-                        ''', (name_variant_1, name_variant_2, contacts, blood_type))
-            existing_donor = cursor.fetchone()
-
-            if existing_donor:
+            if  self.dao_donors.donor_exists(name_variant_1, name_variant_2, contacts, blood_type):
                 self.show_warning( "Error", "This donor is already registered.")
-                conn.close()
-                return
 
-            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            else:
+                 self.dao_donors.add_donor(name,age,blood_type, last_donation,location,contacts)
+                 self.dao_inventory.update_blood_inventory(blood_type)
 
-            cursor.execute('''
-                INSERT INTO Donors ('Name','Age' , 'Blood type', 'Last donation date', 'Location', 'Contacts',timestamp)
-                VALUES (?, ?, ?, ?, ?, ?,?)
-            ''', (name, age, blood_type, last_donation, location, contacts,now))
-
-            cursor.execute('''
-                            INSERT INTO AllDonors ('Name','Age' , 'Blood type', 'Last donation date', 'Location', 'Contacts',timestamp)
-                            VALUES (?, ?, ?, ?, ?, ?,?)
-                        ''', (name, age, blood_type, last_donation, location, contacts,now))
-
-            cursor.execute('''
-                UPDATE "Blood Inventory"
-                SET Quantity = Quantity + 1
-                WHERE "Blood type" = ?
-            ''', (blood_type,))
-
-            conn.commit()
-            conn.close()
+            self.dao_donors.close()
 
 
             self.name_input.clear()

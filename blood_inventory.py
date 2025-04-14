@@ -26,3 +26,21 @@ class BloodInventoryDAO():
             bloods.append(b)
 
         return bloods
+
+    def update_blood_inventory(self,blood_type):
+        self.cursor.execute('''
+                        UPDATE "Blood Inventory"
+                        SET Quantity = Quantity + 1
+                        WHERE "Blood type" = ?
+                    ''', (blood_type,))
+
+        self.conn.commit()
+
+    def update_blood_inventory_minus(self,blood_type):
+        self.cursor.execute('''
+                        UPDATE "Blood Inventory"
+                        SET Quantity = Quantity - 1
+                        WHERE "Blood type" = ?
+                    ''', (blood_type,))
+
+        self.conn.commit()

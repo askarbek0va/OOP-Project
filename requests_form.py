@@ -5,11 +5,18 @@ import sqlite3
 from datetime import datetime
 from PyQt6.QtGui import QMovie
 from form_window import FormWindow
+from requests_dao import RequestsDAO
+from blood_inventory import BloodInventoryDAO
+from donors_dao import DonorsDAO
 
 
 class RequestForm(FormWindow):
     def __init__(self):
         super().__init__("request_blood.ui", "patient.gif")
+
+        self.dao_request=RequestsDAO()
+        self.dao_inventory = BloodInventoryDAO()
+        self.dao_donor=DonorsDAO()
 
         self.label = self.findChild(QtWidgets.QLabel, "label")
         self.label.setScaledContents(True)
@@ -35,26 +42,13 @@ class RequestForm(FormWindow):
             return
 
         try:
-            conn = sqlite3.connect("blood_donation_db")
-            cursor = conn.cursor()
+            self.dao_request.add_request(hospital, city, blood_type)
 
-            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            matching_donors = self.dao_request.get_donors_by_blood_type(blood_type)
 
-            cursor.execute("""
-                INSERT INTO Requests (Hospital, City, "Blood type", status,timestamp)
-                VALUES (?, ?, ?, 'pending',?)
-            """, (hospital, city, blood_type,now))
-            conn.commit()
-
-            cursor.execute("""
-                SELECT * FROM Donors
-                WHERE "Blood type" = ?
-            """, (blood_type,))
-            all_donors = cursor.fetchall()
-
-            if not all_donors:
+            if not matching_donors:
                 self.show_warning( "No Donor Found", "No donor with this blood type available.")
-                conn.close()
+
                 return
 
             self.matching_window = QtWidgets.QMainWindow()
@@ -98,7 +92,7 @@ class RequestForm(FormWindow):
 
             table.setRowCount(0)
 
-            for donor in all_donors:
+            for donor in matching_donors:
                 last_date = datetime.strptime(donor[4], "%Y-%m-%d").date()
                 days_since = (datetime.today().date() - last_date).days
 
@@ -153,7 +147,6 @@ class RequestForm(FormWindow):
             self.matching_window.resize(850, 350)
             self.matching_window.show()
 
-            conn.close()
 
             self.hospital_input.clear()
             self.city_input.clear()
@@ -167,34 +160,12 @@ class RequestForm(FormWindow):
                                      QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
         if reply == QMessageBox.StandardButton.Yes:
             try:
-                conn = sqlite3.connect("blood_donation_db")
-                cursor = conn.cursor()
+                self.dao_request.fulfill_latest_pending_request(hospital, blood_type)
 
-                cursor.execute("""
-                    SELECT rowid FROM Requests 
-                    WHERE Hospital = ? AND "Blood type" = ? AND status = 'pending' 
-                    ORDER BY rowid DESC LIMIT 1
-                """, (hospital, blood_type))
-                latest_request_id = cursor.fetchone()[0]
+                self.dao_donor.delete_by_id(donor_id)
 
+                self.dao_inventory.update_blood_inventory_minus(blood_type)
 
-                cursor.execute("""
-                    UPDATE Requests
-                    SET status = 'fulfilled'
-                    WHERE rowid = ?
-                """, (latest_request_id,))
-                conn.commit()
-
-                cursor.execute("DELETE FROM Donors WHERE ID = ?", (donor_id,))
-
-                cursor.execute("""
-                    UPDATE [Blood Inventory]
-                    SET Quantity = Quantity - 1
-                    WHERE "Blood type" = ? AND Quantity > 0
-                """, (blood_type,))
-
-                conn.commit()
-                conn.close()
 
                 self.show_information( "Done", "Donor has been successfully requested.")
 
