@@ -53,6 +53,10 @@ https://docs.google.com/document/d/19o1r7gERA5ci_CQZ8dP_Uzb97aLcx-AnDkkrhUewomw/
 <img width="420" alt="all_fields-must_be_filled" src="https://github.com/user-attachments/assets/0f929171-3b9d-4d18-9bff-57e482225907" />
 <img width="421" alt="checkbox" src="https://github.com/user-attachments/assets/452c84a2-72e7-47bd-8af2-2da4357e2cfc" />
 
+## UML Diagram
+![uml](https://github.com/user-attachments/assets/02c9601c-ba62-46fa-9eac-15e66bbde554)
+
+
 ## Presentation
 
 https://www.canva.com/design/DAGkH6EyEIs/drA0KINHbpGze1qG5RVKSQ/edit?utm_content=DAGkH6EyEIs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
